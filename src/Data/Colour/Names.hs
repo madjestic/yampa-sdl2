@@ -333,8 +333,9 @@ readColourName "white" = return white
 readColourName "whitesmoke" = return whitesmoke
 readColourName "yellow" = return yellow
 readColourName "yellowgreen" = return yellowgreen
-readColourName x = fail $ 
-  "Data.Colour.Names.readColourName: Unknown colour name "++show x
+readColourName x = error $ "Data.Colour.Names.readColourName: Unknown colour name " ++ show x
+-- readColourName x = fail $ 
+--  "Data.Colour.Names.readColourName: Unknown colour name "++show x
 
 aliceblue :: (Ord a, Floating a) => Colour a
 aliceblue = sRGB24 240 248 255

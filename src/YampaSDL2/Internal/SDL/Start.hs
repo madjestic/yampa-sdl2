@@ -29,6 +29,7 @@ initSDL bc = do
   SDL.showWindow window
   renderer <- SDL.createRenderer window (-1) SDL.defaultRenderer
   SDL.rendererDrawBlendMode renderer $= SDL.BlendAlphaBlend
+  SDL.setMouseLocationMode SDL.RelativeLocation
   lastInteraction <- newMVar =<< SDL.time
   lastScene <- newMVar Nothing
   lastRender <- newMVar 0
